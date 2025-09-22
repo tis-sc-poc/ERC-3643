@@ -89,7 +89,7 @@ contract DefaultCompliance is BasicCompliance {
     /**
      *  @dev See {ICompliance-canTransfer}.
      */
-    function canTransfer(address /*_from*/, address /*_to*/, uint256 /*_value*/) external view override returns (bool) {
+    function canTransfer(address /*_from*/, address /*_to*/, uint256 /*_value*/) external pure override returns (bool) {
         return true;
     }
 }

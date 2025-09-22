@@ -75,7 +75,7 @@ contract SupplyLimitTest is SupplyLimit {
     /**
      *  @dev See {ICompliance-created}.
      */
-    function created(address _to, uint256 _value) external onlyToken override {
+    function created(address _to, uint256 _value) external view onlyToken override {
         _creationActionOnSupplyLimit(_to, _value);
     }
 
@@ -89,7 +89,7 @@ contract SupplyLimitTest is SupplyLimit {
     /**
      *  @dev See {ICompliance-canTransfer}.
      */
-    function canTransfer(address _from, address _to, uint256 _value) external view override returns (bool) {
+    function canTransfer(address _from, address _to, uint256 _value) external pure override returns (bool) {
         if (!complianceCheckOnSupplyLimit(_from, _to, _value))
         {
             return false;

@@ -80,7 +80,7 @@ contract TrustedIssuersRegistryProxy is AbstractProxy {
     }
 
     // solhint-disable-next-line no-complex-fallback
-    fallback() external payable {
+    fallback() external {
         address logic = (ITREXImplementationAuthority(getImplementationAuthority())).getTIRImplementation();
 
         // solhint-disable-next-line no-inline-assembly

@@ -96,7 +96,7 @@ abstract contract SupplyLimit is BasicCompliance {
     *  This check always returns true, real check is done at the creation action level
     */
     function complianceCheckOnSupplyLimit (address /*_from*/, address /*_to*/, uint256 /*_value*/)
-    public view returns (bool) {
+    public pure returns (bool) {
         return true;
     }
 
@@ -116,7 +116,7 @@ abstract contract SupplyLimit is BasicCompliance {
     *  reverts if the post-minting supply is higher than the max supply
     *  internal function, can be called only from the functions of the Compliance smart contract
     */
-    function _creationActionOnSupplyLimit(address /*_to*/, uint256 /*_value*/) internal {
+    function _creationActionOnSupplyLimit(address /*_to*/, uint256 /*_value*/) internal view {
         require(tokenBound.totalSupply() <= supplyLimit, "cannot mint more tokens");
     }
 

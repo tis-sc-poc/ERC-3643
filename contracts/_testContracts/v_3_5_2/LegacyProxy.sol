@@ -38,7 +38,7 @@ contract LegacyProxy {
         require(success, 'Initialization failed.');
     }
 
-    fallback() external payable {
+    fallback() external {
         address logic = IImplementationAuthorityLegacy(implementationAuthority).getImplementation();
 
         assembly {

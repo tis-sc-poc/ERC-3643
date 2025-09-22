@@ -75,6 +75,10 @@ contract AgentRole is Ownable {
     event AgentAdded(address indexed _agent);
     event AgentRemoved(address indexed _agent);
 
+    constructor() Ownable(msg.sender) {
+        // コンストラクタで初期オーナーを設定
+    }
+
     modifier onlyAgent() {
         require(isAgent(msg.sender), "AgentRole: caller does not have the Agent role");
         _;

@@ -1994,7 +1994,7 @@ contract LegacyToken_3_5_2 is ITokenLegacy, AgentRoleUpgradeableLegacy, TokenSto
     /**
      *  @dev See {ITokenLegacy-version}.
      */
-    function version() external view override returns (string memory) {
+    function version() external pure override returns (string memory) {
         return TOKEN_VERSION;
     }
 
