@@ -133,7 +133,7 @@ abstract contract BasicCompliance is AgentRole, ICompliance {
     /**
     *  @dev See {ICompliance-isTokenAgent}.
     */
-    function isTokenAgent(address _agentAddress) public override view returns (bool) {
+    function isTokenAgent(address _agentAddress) public view override returns (bool) {
         if (!_tokenAgentsList[_agentAddress] && !(AgentRole(address(tokenBound))).isAgent(_agentAddress)) {
             return false;
         }
@@ -143,7 +143,7 @@ abstract contract BasicCompliance is AgentRole, ICompliance {
     /**
     *  @dev See {ICompliance-isTokenBound}.
     */
-    function isTokenBound(address _token) public override view returns (bool) {
+    function isTokenBound(address _token) public view override returns (bool) {
         if (_token != address(tokenBound)){
             return false;
         }

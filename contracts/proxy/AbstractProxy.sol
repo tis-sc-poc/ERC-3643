@@ -89,7 +89,7 @@ abstract contract AbstractProxy is IProxy, Initializable {
     /**
      *  @dev See {IProxy-getImplementationAuthority}.
      */
-    function getImplementationAuthority() public override view returns(address) {
+    function getImplementationAuthority() public view override returns(address) {
         address implemAuth;
         // solhint-disable-next-line no-inline-assembly
         assembly {

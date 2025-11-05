@@ -308,28 +308,28 @@ contract TREXGateway is ITREXGateway, AgentRole {
     /**
      *  @dev See {ITREXGateway-getPublicDeploymentStatus}.
      */
-    function getPublicDeploymentStatus() external override view returns(bool) {
+    function getPublicDeploymentStatus() external view override returns(bool) {
         return _publicDeploymentStatus;
     }
 
     /**
      *  @dev See {ITREXGateway-getFactory}.
      */
-    function getFactory() external override view returns(address) {
+    function getFactory() external view override returns(address) {
         return _factory;
     }
 
     /**
      *  @dev See {ITREXGateway-getDeploymentFee}.
      */
-    function getDeploymentFee() external override view returns(Fee memory) {
+    function getDeploymentFee() external view override returns(Fee memory) {
         return _deploymentFee;
     }
 
     /**
      *  @dev See {ITREXGateway-isDeploymentFeeEnabled}.
      */
-    function isDeploymentFeeEnabled() external override view returns(bool) {
+    function isDeploymentFeeEnabled() external view override returns(bool) {
         return _deploymentFeeEnabled;
     }
 
@@ -363,14 +363,14 @@ contract TREXGateway is ITREXGateway, AgentRole {
     /**
      *  @dev See {ITREXGateway-isDeployer}.
      */
-    function isDeployer(address deployer) public override view returns(bool) {
+    function isDeployer(address deployer) public view override returns(bool) {
         return _deployers[deployer];
     }
 
     /**
      *  @dev See {ITREXGateway-calculateFee}.
      */
-    function calculateFee(address deployer) public override view returns(uint256) {
+    function calculateFee(address deployer) public view override returns(uint256) {
         return _deploymentFee.fee - ((_feeDiscount[deployer] * _deploymentFee.fee) / 10000);
     }
 }

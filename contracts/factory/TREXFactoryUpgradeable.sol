@@ -133,21 +133,21 @@ contract TREXFactoryUpgradeable is ITREXFactory, OwnableUpgradeable {
     /**
      *  @dev See {ITREXFactory-getImplementationAuthority}.
      */
-    function getImplementationAuthority() external override view returns(address) {
+    function getImplementationAuthority() external view override returns(address) {
         return _implementationAuthority;
     }
 
     /**
      *  @dev See {ITREXFactory-getIdFactory}.
      */
-    function getIdFactory() external override view returns(address) {
+    function getIdFactory() external view override returns(address) {
         return _idFactory;
     }
 
     /**
      *  @dev See {ITREXFactory-getToken}.
      */
-    function getToken(string calldata _salt) external override view returns(address) {
+    function getToken(string calldata _salt) external view override returns(address) {
         return tokenDeployed[_salt];
     }
 

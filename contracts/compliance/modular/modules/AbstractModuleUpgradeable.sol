@@ -136,7 +136,7 @@ abstract contract AbstractModuleUpgradeable is IModule, Initializable, OwnableUp
     function __AbstractModule_init_unchained() internal onlyInitializing { }
 
     // solhint-disable-next-line no-empty-blocks
-    function _authorizeUpgrade(address /*newImplementation*/) internal override virtual onlyOwner { }
+    function _authorizeUpgrade(address /*newImplementation*/) internal virtual override onlyOwner { }
 
     function _getAbstractModuleStorage() private pure returns (AbstractModuleStorage storage s) {
         // solhint-disable-next-line no-inline-assembly
